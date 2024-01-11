@@ -1,0 +1,20 @@
+<div #map id="map">
+</div>
+
+<div class="floating-range p-2">
+  <div class="floating-content">
+    <button (click)="this.zoomOut()" class="btn btn-primary">-</button>
+
+    <!-- zoomInput.value es de tipo string por que es una caja de texto -->
+    <input type="range" class="form-range" min="-2" max="18" [value]="this.zoom" #zoomInput
+      (input)="this.zoomChanged(zoomInput.value)">
+
+    <button (click)="this.zoomIn()" class="btn btn-primary">+</button>
+  </div>
+  <span class="form-label">
+    <!-- Aqui siempre mostrara dos numeros enteros con dos decimales -->
+    Zoom: {{ this.zoom | number:'2.2-2' }}
+    <br>
+    Lng,Lat {{ this.currentLngLat }}
+  </span>
+</div>

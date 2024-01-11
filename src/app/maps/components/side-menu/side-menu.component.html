@@ -1,0 +1,6 @@
+<!-- Este es un menu dinamico -->
+<ul class="list-group">
+  <li *ngFor="let item of this.menuItem" [routerLink]="item.route" class="list-group-item" routerLinkActive="active">
+    {{ item.name }}
+  </li>
+</ul>

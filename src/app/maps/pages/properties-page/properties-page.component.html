@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <!-- Titulo -->
+  <div class="row mt-3">
+    <div class="col-2">
+    </div>
+    <div class="col-10">
+      <h3>Listado de propiedades</h3>
+      <hr>
+    </div>
+  </div>
+
+  <!-- Secion mapas -->
+  <div class="row mt-2">
+
+    <!-- Separación -->
+    <div class="col-2"></div>
+
+    <div class="col-10">
+
+      <div class="row">
+
+        <!-- Houses -->
+        <div *ngFor="let house of this.houses" class="col-12 col-md-4  mb-2">
+
+          <div class="card">
+
+            <!-- <img src="..." class="card-img-top" alt="imagen-mapa"> -->
+
+            <!-- enviando datos es este componente mendiaante un input -->
+            <app-mini-mapa [lngLat]="house.lngLat"></app-mini-mapa>
+
+            <div class="card-body">
+              <h5 class="card-title">{{ house.title }}</h5>
+              <p class="card-text">{{ house.description }}</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
